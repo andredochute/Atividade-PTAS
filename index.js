@@ -36,6 +36,10 @@ var resultadoSave = await excluir.save();
 console.log(resultadoSave);
 });
 
+app.get("/:id", async function(req, res){
+  var mostrar = await usuario.findByPk(req.params.id);
+   res.json(mostrar);
+});
 
 app.listen(3000, function(){
   console.log("positivo");
