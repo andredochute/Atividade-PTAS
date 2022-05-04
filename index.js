@@ -20,6 +20,17 @@ app.post("/", function(req, res){
   
 });
 
+app.put("/:id", async function(req, res){
+var atualizar = await usuario.findByPk(req.params.id);
+res.send(atualizar.nome = "igor")
+
+var resultadoSave = await atualizar.save();
+console.log(resultadoSave);
+});
+
+
+
+
 app.listen(3000, function(){
   console.log("positivo");
 });
