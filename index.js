@@ -28,7 +28,13 @@ var resultadoSave = await atualizar.save();
 console.log(resultadoSave);
 });
 
+app.delete("/:id", async function(req, res){
+var excluir = await usuario.findByPk(req.params.id);
+excluir.destroy();
 
+var resultadoSave = await excluir.save();
+console.log(resultadoSave);
+});
 
 
 app.listen(3000, function(){
